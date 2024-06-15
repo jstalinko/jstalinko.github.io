@@ -1,0 +1,213 @@
+<template>
+  <div>
+    <div class="h-screen ">
+            <div class="container w-1/8 mx-auto mt-5  ">
+                <div class="p-5 border-b-2 border-b-black">
+                    <h1 class="text-center underline text-4xl font-bold bg-gradient-to-r from-orange-700 via-blue-600 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient ">JUSTALINKO</h1>
+                    <p class="text-center mt-5">
+                        Full-Stack Developer, Tech Enthusiast, and Crazy Thinker.
+                    </p>
+
+                </div>
+                <hr />
+                <nav class="mt-5">
+                    <ul class="flex justify-center space-x-5">
+                        <li class="bg-black text-white p-2 hover:underline">
+                            <g-link to="/">Home</g-link>
+                        </li>
+                        <li class="bg-black text-white p-2 hover:underline">
+                        <g-link to="https://github.com/jstag-linko" target="_blank">Repository</g-link>
+                        </li>
+                       
+                        <li class="bg-black text-white p-2 hover:underline">
+                            <g-link to="/blog">Blog</g-link>
+                        </li>
+                    </ul>
+                </nav>
+
+
+                <div class="mt-5 flex flex-row">
+                
+                <div class="basis-3/4 ">
+                 
+                    <slot/>
+                </div>
+                <div class="basis-1/4 ">
+            <div class="w-100 rounded-lg p-5 border-black border-2 hover:shadow-lg mb-4">
+              <h1 class="text-black text-2xl mx-1 font-extrabold  relative inline-block stroke-current">📍 FIND ME
+                <svg class="absolute-bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none">
+                  <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" strokeWidth="2"></path>
+                </svg>
+              </h1>
+              <ul class="mt-2">
+                <li class="flex justify-between p-1">
+                  <g-link to="https://instagram.com/ag-linkomnsby">
+                    <i class="mdi mdi-instagram"></i>
+                    <span> @alinkomnsby</span>
+                  </g-link>
+                </li>
+                <li class="flex justify-between p-1">
+                  <g-link to="mailto:hrd@justalinko.com">
+                    <i class="mdi mdi-email"></i>
+                    <span>hrd@justalinko.com</span>
+                  </g-link>
+                </li>
+                <li class="flex justify-between p-1">
+                  <g-link to="https://github.com/jstalinko" target="_blank" >
+                    <i class="mdi mdi-github"></i>
+                    <span>@justalinko / @jstalinko</span>
+                  </g-link>
+                </li>
+                <li class="flex justify-between p-1">
+
+                  <g-link to="https://justalinko.com/blog" target="_blank" >
+                    <i class="mdi mdi-search-web"></i>
+                    <span>justalinko.com</span>
+                  </g-link>
+                </li>
+
+
+              </ul>
+
+            </div>
+
+            <div class="w-100 rounded-lg p-5 border-black border-2 hover:shadow-lg mb-4">
+              <h1 class="text-black text-2xl mx-1 font-extrabold  relative inline-block stroke-current">🔨 TECH-STACK
+                <svg class="absolute-bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none">
+                  <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" strokeWidth="2"></path>
+                </svg>
+              </h1>
+              <ul class="mt-2">
+                <li class="p-1">
+                  <i class="mdi mdi-language-php"></i>
+                  <span> PHP Languange</span>
+
+                </li>
+                <li class="p-1">
+
+                  <i class="mdi mdi-laravel"></i>
+                  <span> Laravel Framework</span>
+
+                </li>
+                <li class="p-1">
+
+                  <i class="mdi mdi-code-tags"></i>
+                  <span> CodeIgniter Framework</span>
+
+                </li>
+                <li class="p-1">
+
+                  <i class="mdi mdi-nodejs"></i>
+                  <span> NodeJS</span>
+
+                </li>
+                <li class="p-1">
+
+                  <i class="mdi mdi-nuxt"></i>
+                  <span> NuxtJS </span>
+
+                </li>
+                <li class="p-1">
+
+                  <i class="mdi mdi-vuejs"></i>
+                  <span> Vue.js </span>
+
+                </li>
+                <li class="p-1">
+
+                  <i class="mdi mdi-bash"></i>
+                  <span> Bash Shell Script</span>
+
+                </li>
+                <li class=" p-1">
+
+                  <i class="mdi mdi-react"></i>
+                  <span> Remix React</span>
+
+                </li>
+
+
+              </ul>
+
+            </div>
+
+            <div class="w-100 rounded-lg p-5 border-black border-2 hover:shadow-lg">
+              <h1 class="text-black text-2xl mx-1 font-extrabold  relative inline-block stroke-current">👋 GET IN TOUCH
+                <svg class="absolute-bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none">
+                  <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" strokeWidth="2"></path>
+                </svg>
+              </h1>
+               <Form action="/?index" method="POST">
+              <div class="mt-2">
+                <label htmlFor="name">Name</label>
+                <input type="text" name="name" id="name" class="w-full p-2 border-2 border-black shadow" />
+                </div>
+                <div class="mt-2">
+                <label htmlFor="email">Email</label>
+                <input type="email" name="email" id="email" class="w-full p-2 border-2 border-black shadow" />
+                </div>
+                <div class="mt-2">
+                <label htmlFor="message">Message</label>
+                <textarea name="message" id="message" class="w-full p-2 border-2 border-black shadow"></textarea>
+                </div>
+                <div class="mt-2">
+                <button type="submit" class="w-full bg-black text-white p-2 hover:bg-gray-800">Send</button>
+                </div>
+                </Form>
+              </div>
+          </div>
+                </div>
+
+                <footer class="mt-10 mb-5 p-5 border-t-2 border-t-black bg-gradient-to-r from-red-500  via-red-300 to-purple-400 ">
+          <p class="text-center text-white">
+            &copy; 2021 JUSTALINKO. All rights reserved. | Crafted with : <g-image src="~/favicon.png" alt="GridSome" class="w-5 h-5 inline-block" /> ,<i class="mdi mdi-vuejs"></i> and hosted in: <i class="mdi mdi-github"></i>
+          </p>
+
+
+        </footer>
+            </div>
+        </div>
+  </div>
+</template>
+
+<static-query>
+query {
+  metadata {
+    siteName
+  }
+}
+</static-query>
+
+<style>
+.animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 6s ease infinite alternate;
+  -moz-animation: animatedgradient 6s ease infinite alternate;
+  animation: animatedgradient 6s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+h1,h2,h3{
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+p,span,a{
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 21px;
+}
+</style>
