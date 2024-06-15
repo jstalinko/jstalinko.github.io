@@ -140,21 +140,25 @@
                   <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" strokeWidth="2"></path>
                 </svg>
               </h1>
-               <form action="/?index" method="POST">
+               <form >
               <div class="mt-2">
                 <label htmlFor="name">Name</label>
-                <input type="text" name="name" id="name" class="w-full p-2 border-2 border-black shadow" />
+                <input type="text" name="name" id="name" class="w-full p-2 border-2 border-black shadow" v-model="name"/>
                 </div>
                 <div class="mt-2">
                 <label htmlFor="email">Email</label>
-                <input type="email" name="email" id="email" class="w-full p-2 border-2 border-black shadow" />
+                <input type="email" name="email" id="email" class="w-full p-2 border-2 border-black shadow" v-model="email"/>
                 </div>
                 <div class="mt-2">
                 <label htmlFor="message">Message</label>
-                <textarea name="message" id="message" class="w-full p-2 border-2 border-black shadow"></textarea>
+                <textarea name="message" id="message" class="w-full p-2 border-2 border-black shadow" v-model="message"></textarea>
                 </div>
                 <div class="mt-2">
-                <button type="submit" class="w-full bg-black text-white p-2 hover:bg-gray-800">Send</button>
+                <button type="button" class="w-full bg-black text-white p-2 hover:bg-gray-800" @click="sendMessage">
+                <span v-if="isSubmitting">Sending...</span>
+                <span v-else>Send</span>
+                
+                </button>
                 </div>
               </form>
               </div>
@@ -180,6 +184,34 @@ query {
   }
 }
 </static-query>
+
+<script>
+export default{
+  data(){
+    return{
+      name:'',
+      email:'',
+      message:'',
+      isSubmitting:false
+    }
+  },
+  methods: {
+    async sendMessage(){
+      this.isSubmitting = true
+      let url = `https://docs.google.com/forms/d/e/1FAIpQLSdVtJBLh8snimfnonoDRN3A9abhSGal94x1HX2xro4xdAjfog/formResponse?&submit=Submit?usp=pp_url&entry.133175022=${this.name}&entry.220202485=${this.email}&entry.814784955=${this.message}`
+      await fetch(url);
+      this.isSubmitting = false
+      this.name = ''
+      this.email = ''
+      this.message = ''
+    
+    }
+  
+  },
+}
+
+
+</script>
 
 <style>
 .animate-gradient {
