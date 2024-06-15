@@ -16,7 +16,7 @@
                             <g-link to="/">Home</g-link>
                         </li>
                         <li class="bg-black text-white p-2 hover:underline">
-                        <g-link to="https://github.com/jstag-linko" target="_blank">Repository</g-link>
+                        <g-link to="/projects" >Projects</g-link>
                         </li>
                        
                         <li class="bg-black text-white p-2 hover:underline">
@@ -140,7 +140,7 @@
                   <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" strokeWidth="2"></path>
                 </svg>
               </h1>
-               <Form action="/?index" method="POST">
+               <form action="/?index" method="POST">
               <div class="mt-2">
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" id="name" class="w-full p-2 border-2 border-black shadow" />
@@ -156,14 +156,14 @@
                 <div class="mt-2">
                 <button type="submit" class="w-full bg-black text-white p-2 hover:bg-gray-800">Send</button>
                 </div>
-                </Form>
+              </form>
               </div>
           </div>
                 </div>
 
                 <footer class="mt-10 mb-5 p-5 border-t-2 border-t-black bg-gradient-to-r from-red-500  via-red-300 to-purple-400 ">
-          <p class="text-center text-white">
-            &copy; 2021 JUSTALINKO. All rights reserved. | Crafted with : <g-image src="~/favicon.png" alt="GridSome" class="w-5 h-5 inline-block" /> ,<i class="mdi mdi-vuejs"></i> and hosted in: <i class="mdi mdi-github"></i>
+          <p class="text-center text-white font-thin font-sans text-sm">
+            &copy; {{ new Date().getFullYear() }} Crafted with : <g-image src="~/favicon.png" alt="GridSome" class="w-5 h-5 inline-block" /> ,<i class="mdi mdi-vuejs"></i> and hosted in: <i class="mdi mdi-github"></i> by JUSTALINKO.
           </p>
 
 
