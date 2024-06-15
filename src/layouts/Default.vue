@@ -28,7 +28,7 @@
 
                 <div class="mt-5 flex flex-row">
                 
-                <div class="basis-3/4 ">
+                <div class="basis-3/4 sm:d-none ">
                  
                     <slot/>
                 </div>
