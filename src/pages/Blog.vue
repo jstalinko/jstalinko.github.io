@@ -18,7 +18,7 @@
         </li>
 
       </ul>
-      <g-link to="/blog" class="mt-2 block text-center text-black font-bold hover:text-amber-800">📚 More Posts</g-link>
+      
 
     </section>
   </Layout>
