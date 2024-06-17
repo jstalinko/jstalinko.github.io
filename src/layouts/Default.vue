@@ -32,7 +32,7 @@
                  
                     <slot/>
                 </div>
-                <div class="block md:hidden">
+                <div class="block md:hidden ">
                   <svg class="absolute-bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none">
                   <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" strokeWidth="2"></path>
@@ -42,7 +42,9 @@
                   <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" strokeWidth="2"></path>
                 </svg>
                 </div>
-                <div class="basis-full md:basis-1/4 mt-5">
+
+
+                <div class="basis-full md:basis-1/4 mt-5 mr-3 ml-3">
             <div class="w-100 rounded-lg p-5 border-black border-2 hover:shadow-lg mb-4">
               <h1 class="text-black text-2xl mx-1 font-extrabold  relative inline-block stroke-current">📍 FIND ME
                 <svg class="absolute-bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
