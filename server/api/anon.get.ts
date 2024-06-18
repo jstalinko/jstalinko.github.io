@@ -1,4 +1,4 @@
-import { buildJsonResponse, createLink, anmesShort } from "../model.server";
+import { buildJsonResponse, createLink, anmesShort , anlinkShort} from "../model.server";
 export default defineEventHandler(async (event) => {
   const query: any = getQuery(event);
 
@@ -7,6 +7,7 @@ export default defineEventHandler(async (event) => {
     return buildJsonResponse(200, response);
   } else if (query.method == "show" && query.short) {
     let response = await anmesShort(query.short);
-    return buildJsonResponse(200, response);
+    let anlink = await anlinkShort(query.short);
+    return buildJsonResponse(200, response, {anlink: anlink });
   }
 });
