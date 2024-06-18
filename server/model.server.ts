@@ -94,7 +94,7 @@ export const anmesId = async (id: any) => {
   return await db.anmes.findFirst({ where: { id: id } });
 };
 export const anmesShort = async (short: string) => {
-  return await db.anmes.findFirst({ where: { short: short } });
+  return await db.anmes.findMany({ where: { short: short } });
 };
 export const createMessage = async (short: string, content: string) => {
   const message = {
