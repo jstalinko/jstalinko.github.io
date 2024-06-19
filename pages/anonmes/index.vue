@@ -24,6 +24,8 @@
                     class="w-full p-2 border-2 border-black  mt-4 focus:border-gray-400 focus:shadow-md hover:border-amber-900"
                     placeholder="Your Name" v-model="username">
                 <br>
+                <NuxtTurnstile v-model="token" />
+
                 <button class="mt-4 p-2 bg-black text-white  hover:bg-gray-600 w-full" type="button"
                     @click="createAnon">Create</button>
 
@@ -38,10 +40,15 @@
 <script lang="ts" setup>
 const username = ref('');
 const shortId = ref(null);
+const token = ref('');
+
+useHead({
+    title: "Anonymous Message - JUSTALINKO"
+});
 
 
 const createAnon = async () => {
-    const res: any = await $fetch('/api/anon?method=create&name=' + username.value);
+    const res: any = await $fetch('/api/anon?method=create&name=' + username.value+'&token='+token.value);
     let shortx = res.body.short;
     if (shortx) {
         shortId.value = shortx;

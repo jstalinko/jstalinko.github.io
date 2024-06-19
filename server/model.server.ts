@@ -34,7 +34,7 @@ export const shortMake = async (author: string) => {
 };
 
 export const postAll = async () => {
-  const post = await db.post.findMany();
+  const post = await db.post.findMany({orderBy: { id: 'desc' } });
   return post;
 };
 export const postId = async (id: any) => {
@@ -55,11 +55,12 @@ export const createPost = async (
   content: string,
   author: string
 ) => {
+  const slugs = await slug(title);
   const postx = {
     title: title,
     content: content,
     author: author,
-    slug: "abcd",
+    slug: slugs,
     published: true,
   };
   const post = await db.post.create({
@@ -94,7 +95,7 @@ export const anmesId = async (id: any) => {
   return await db.anmes.findFirst({ where: { id: id } });
 };
 export const anmesShort = async (short: string) => {
-  return await db.anmes.findMany({ where: { short: short } });
+  return await db.anmes.findMany({ where: { short: short },orderBy: { id: 'desc' } });
 };
 export const createMessage = async (short: string, content: string) => {
   const message = {

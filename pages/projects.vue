@@ -55,6 +55,9 @@
 </template>
 
 <script lang="ts" setup>
+useHead({
+    title: "Projects - JUSTALINKO"
+});
 
 const repositories: any = ref([])
 const repositories2: any = ref([])

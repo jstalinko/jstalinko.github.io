@@ -185,8 +185,8 @@
 
                 <footer class="mt-10 mb-5 p-5 border-t-2 border-t-black bg-gradient-to-r from-red-500  via-red-300 to-purple-400 ">
           <p class="text-center text-white font-thin font-sans text-sm">
-            &copy; {{ new Date().getFullYear() }} Crafted with <i class="mdi mdi-nuxt"></i> by JUSTALINKO.
-          </p>
+            &copy; {{ new Date().getFullYear() }} Crafted with <i class="mdi mdi-nuxt"></i> by JUSTALINKO | AI Powered by : <i class="mdi mdi-zodiac-gemini"></i>
+ Gemini          </p>
 
 
         </footer>
@@ -196,7 +196,6 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
 
 
 const email = ref('');

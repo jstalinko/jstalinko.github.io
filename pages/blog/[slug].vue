@@ -4,7 +4,8 @@
       <h1 class="text-4xl font-semibold mb-1">📖  {{ post.title }}</h1>
       <span class="font-light">📅 {{ new Date(post.createdAt).toDateString() }}</span>
       
-      <div class="ml-3 mr-3 mt-8 mb-16 prose lg:prose-lg xl:prose-xl" v-html="post.content" />
+      <div class="ml-3 mr-3 mt-8 mb-16" ><p class=" prose lg:prose-lg xl:prose-xl" v-html="post.content"></p></div>
+
 
       <div class="mt-5">
         <!-- social media shareer -->
@@ -27,7 +28,7 @@
               <i class="mdi mdi-whatsapp"></i>
               </a>
               <!-- share ig story -->
-              <a href="https://www.instagram.com/stories/create"
+              <a href="#" @click="shareIgStory"
                 class="bg-red-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-full ml-2">
                 <i class="mdi mdi-instagram"></i>
               </a>
@@ -39,22 +40,36 @@
 </template>
 
 <script lang="ts" setup>
+
+
 const post = ref({
   title: '',
   date: '',
   content: '',
   author: '',
 });
-
+const config = useRuntimeConfig();
 const route = useRoute();
-const url = 'http://localhost:3000'+ route.fullPath;
+const url = config.public.baseUrl + route.fullPath;
 const slug = route.params.slug;
 const getPost = async() => {
 
   const getPost: any = await $fetch('/api/post?method=slug&slug='+slug);
   post.value = getPost.body;
+  useHead({
+    title: post.value.title + " - JUSTALINKO"
+});
 }; 
 
+
+
+const shareIgStory = () => {
+  // copy link to clipboard
+  navigator.clipboard.writeText(url);
+  alert('Link copied to clipboard');
+  return window.location.href = 'https://www.instagram.com/stories/create';
+
+};
 onMounted(async () => {
   await getPost();
 });

@@ -39,6 +39,10 @@
 
 
 <script lang="ts" setup>
+useHead({
+    title: "Blogs - JUSTALINKO"
+});
+
 const posts: any = ref([]);
 const nextLink: any = ref('');
 const prevLink: any = ref('');

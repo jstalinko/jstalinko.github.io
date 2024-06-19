@@ -1,8 +1,37 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
+    
     head: {
+      title : "JUSTALINKO - All You can {H}ate ",
+      meta: [
+        {
+          charset: "utf-8",
+        },
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1",
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: "JUSTALINKO - All You can {H}ate ",
+        },
+        {
+          name: "author",
+          content: "@alinkomnsby",
+        },
+        {
+          name: "twitter:image",
+          content: "/jst.png",
+        },
+        {
+          name: "og:image",
+          content: "/jst.png",
+        }
+      ],
       link: [
+        { rel: "shortcut icon", href: "/favicon.png" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
           rel: "preconnect",
@@ -26,7 +55,33 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ["@nuxt/content", "@vite-pwa/nuxt", "@nuxtjs/tailwindcss" ],
+  modules: [
+    "@nuxt/content",
+    "@vite-pwa/nuxt",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/turnstile",
+    "nuxt-tiptap-editor",
+  ],
+
+  tiptap: {
+    prefix: "Tiptap", //prefix for Tiptap imports, composables not included
+  },
+
+  tailwindcss: {
+    exposeConfig: true
+  },
 
   devtools: { enabled: true },
+
+  
+  runtimeConfig: {
+    turnstile: {
+      // This can be overridden at runtime via the NUXT_TURNSTILE_SECRET_KEY
+      secretKey: '0x4AAAAAAAc05_oBvjpbyWj9',
+    },
+    public:{
+      baseUrl: 'http://localhost:3000',
+    },
+    POST_PASSWORD: "password"
+  },
 });

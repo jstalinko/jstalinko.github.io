@@ -6,20 +6,30 @@
                 preserveAspectRatio="none">
                 <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" strokeWidth="2"></path>
             </svg></h2>
+            <div class="flex flex-col md:flex-row">
+                <div>
+                    <img src="/jst.png" class="max-w-50 mr-5 "/>
+                </div>
+                <div>
         <p
-            class="mt-2 bg-gradient-to-r from-red-500 via-blue-900 to-yellow-600 text-transparent bg-clip-text bg-300% animate-gradient">
+            class="ml-2 mt-10 bg-gradient-to-r from-red-500 via-blue-900 to-yellow-600 text-transparent bg-clip-text bg-300% animate-gradient">
+          
             Alin Koko Mansuby is a Web Developer based on Jepara, Central Java , Indonesia with a passion for
             building
             digital services/stuff he wants. Experienced in writing PHP programming language since high school, has
             handled
             various projects using either framework or native PHP.
-
             He has a knack for all things launching products, from planning and designing all the way to solving
             real-life
-            problems with code. He like to write code and thinking about new idea and create the innovation for
+            problems with code.
+        </p>
+    </div>
+    </div>
+    <p class="ml-2 mt-2 bg-gradient-to-r from-red-500 via-blue-900 to-yellow-600 text-transparent bg-clip-text bg-300% animate-gradient">
+       He like to write code and thinking about new idea and create the innovation for
             future,
             Actually he is quite lazy ,so he often makes automation tools for him project.
-        </p>
+    </p>
     </section>
 
     <section class="p-5">

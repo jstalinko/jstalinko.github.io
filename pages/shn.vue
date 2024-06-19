@@ -62,7 +62,8 @@
                             <button type="button"
                                 class="inline-flex items-center justify-center px-2 py-2 transition duration-500 ease-in-out text-white bg-black hover:bg-gray-500 focus:outline-none"
                                 @click="sendCommand">
-                                <span class="font-bold">Send</span>
+                                <span class="font-bold" v-if="!replyIng">Send</span>
+                                <span class="font-bold" v-else>Replying...</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                     class="h-6 w-6 ml-2 transform rotate-90">
                                     <path
@@ -104,12 +105,18 @@
 </style>
 
 <script lang="ts" setup>
+useHead({
+    title: "SHN-AI - JUSTALINKO"
+});
+
 import { GoogleGenerativeAI } from "@google/generative-ai";
 const command = ref('Hello !');
 const aiResponse = ref('Hello, can i help you today?');
 const aiResponseStream = ref([]);
+const replyIng = ref(false);
 
 const sendCommand = async () => {
+    replyIng.value = true;
     let GEMINI_API = 'AIzaSyCORWk7gFe9EdttBMNCVaLcQRU0F5du3O8';
 
 
@@ -138,6 +145,7 @@ const sendCommand = async () => {
         aiResponseStream.value.push(chunkText);
     }
     console.log(text);
+    replyIng.value = false;
 
 };
 </script>
