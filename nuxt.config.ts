@@ -80,7 +80,7 @@ export default defineNuxtConfig({
       siteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAAc05_oBvjpbyWj9'
     },
     public:{
-      baseUrl: 'http://localhost:3000',
+      baseUrl: 'https://justalinko.com',
     },
     POST_PASSWORD: "password"
   },
