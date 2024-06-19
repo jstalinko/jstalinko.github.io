@@ -81,4 +81,26 @@ export default defineNuxtConfig({
     },
     POST_PASSWORD: "password"
   },
+
+
+  pwa:{
+    manifest:{
+      name: 'JUSTALINKO',
+      lang: 'id',
+      useWebmanifestExtension: false
+    },
+    meta:{
+      charset: 'utf-8',
+      viewport:'width=device-width, initial-scale=1',
+      mobileAppIOS:true,
+      mobileApp:true,
+      appleStatusBarStyle:'black',
+      favicon:true,
+      name: "JUSTALINKO",
+      author: "@alinkomnsby",
+      description: "All you can hate.",
+      lang: "id",
+
+    }
+  }
 });
