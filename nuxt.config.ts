@@ -77,7 +77,7 @@ export default defineNuxtConfig({
       secretKey: process.env.NUXT_TURNSTILE_SECRET_KEY || '0x4AAAAAAAc05-28Y7HehJN3Rzm_jHcjoHo',
     },
     turnstile:{
-      siteKey:NUXT_PUBLIC_TURNSTILE_SITE_KEY|| '0x4AAAAAAAc05_oBvjpbyWj9'
+      siteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAAc05_oBvjpbyWj9'
     },
     public:{
       baseUrl: 'http://localhost:3000',
