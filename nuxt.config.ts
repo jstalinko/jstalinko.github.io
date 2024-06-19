@@ -74,7 +74,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     turnstile: {
       // This can be overridden at runtime via the NUXT_TURNSTILE_SECRET_KEY
-      secretKey: '0x4AAAAAAAc05_oBvjpbyWj9',
+      secretKey: process.env.NUXT_TURNSTILE_SECRET_KEY || '0x4AAAAAAAc05-28Y7HehJN3Rzm_jHcjoHo',
+    },
+    turnstile:{
+      siteKey:NUXT_PUBLIC_TURNSTILE_SITE_KEY|| '0x4AAAAAAAc05_oBvjpbyWj9'
     },
     public:{
       baseUrl: 'http://localhost:3000',
