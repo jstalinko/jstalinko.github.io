@@ -60,12 +60,9 @@ export default defineNuxtConfig({
     "@vite-pwa/nuxt",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/turnstile",
-    "nuxt-tiptap-editor",
   ],
 
-  tiptap: {
-    prefix: "Tiptap", //prefix for Tiptap imports, composables not included
-  },
+
 
   tailwindcss: {
     exposeConfig: true

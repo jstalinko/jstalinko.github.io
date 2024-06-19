@@ -16,6 +16,10 @@
             </div>
 
             <div class="w-full md:w-2/3 mx-auto">
+                <div class="bg-green-300 p-2 text-black m-2" v-if="isSuccessful">
+                    Message sent successfully !
+                </div>
+
                 <form @submit.prevent="sendMessage">
                   
                     <textarea
@@ -49,6 +53,7 @@ const anlink:any = ref({});
 const route = useRoute();
 const message = ref('');
 const token = ref('');
+const isSuccessful = ref(false);
 
 
 
@@ -83,6 +88,8 @@ const sendMessage = async () => {
     });
     if(res.statusCode == 200)
     {
+        isSuccessful.value = true;
+        message.value = '';
         await getMess();
     }
 

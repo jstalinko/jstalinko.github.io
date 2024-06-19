@@ -233,12 +233,13 @@ const sendMessage = async () => {
     background-position: 0% 50%;
   }
 }
-h1,h2,h3{
-  font-family: "Pixelify Sans", sans-serif;
+h1,h2,h3,h1 > a,h2 > a,h3 > a{
+  font-family: "Pixelify Sans", sans-serif !important;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
+
 p,span,a{
   font-family: "Nanum Pen Script", cursive;
   font-size: 21px;

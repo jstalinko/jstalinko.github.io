@@ -8,6 +8,7 @@
                     <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" strokeWidth="2"></path>
                 </svg>
             </h2>
+            <div v-if="isSuccessful" class="bg-green-300 p-2 text-black m-2" v-html="message"></div>
 
             <form class="shadow rounded-lg p-5 m-5" @submit.prevent="createPost">
                 <div class="mb-2">
@@ -17,7 +18,8 @@
                 <div class="mb-2">
                 <label htmlFor="name">Content</label>
                
-                <TiptapEditor v-model="content" />
+                <textarea class="w-full p-2 border-2 border-black shadow hover:border-blue-500 focus:border-blue-500 h-60" v-model="content"></textarea>
+
                 </div>
                 <div class="mb-2">
                 <label htmlFor="name">Author</label>
@@ -47,6 +49,11 @@ const content = ref('');
 const author = ref('');
 const token = ref('');
 const password = ref('');
+const isSuccessful = ref(false);
+const message = ref('');
+const config = useRuntimeConfig();
+
+
 
 
 const createPost = async() => {
@@ -66,7 +73,11 @@ const createPost = async() => {
             }
         }
     );
-    console.log(res);
+    if(res.statusCode == 200)
+    {
+        isSuccessful.value = true;
+        message.value = "Your post link is : <a href='"+config.public.baseUrl+"/blog/"+res.body.slug+"'>"+config.public.baseUrl+"/blog/"+res.body.slug+"</a>";
+    }
 }
 
 </script>
