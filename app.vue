@@ -12,23 +12,24 @@
 
         </div>
         <hr />
-        <nav class="mt-5 hidden md:block">
-          <ul class="flex justify-center space-x-5 ">
-            <li class="bg-black text-white p-2 hover:underline">
-              <NuxtLink to="/">Home</NuxtLink>
+        <button class="bg-black p-2 w-full text-white hover:bg-gray-700 mt-2" @click="menuOpen=!menuOpen"><i :class="(menuOpen== true ) ? 'mdi mdi-menu-open' : 'mdi mdi-menu'"></i> Menu</button>
+        <nav :class="(menuOpen == true ) ? 'mt-5 block' : 'mt-5 hidden md:block'">
+          <ul class="flex flex-col md:flex-row md:justify-center md:space-x-5 ">
+            <li class="bg-black text-white p-2 hover:underline mb-1">
+              <NuxtLink to="/"><i class="mdi mdi-home"></i> Home</NuxtLink>
             </li>
-            <li class="bg-black text-white p-2 hover:underline">
-              <NuxtLink to="/projects">Projects</NuxtLink>
+            <li class="bg-black text-white p-2 hover:underline mb-1">
+              <NuxtLink to="/projects"><i class="mdi mdi-code-braces" ></i> Projects</NuxtLink>
             </li>
 
-            <li class="bg-black text-white p-2 hover:underline">
-              <NuxtLink to="/blog">Blog</NuxtLink>
+            <li class="bg-black text-white p-2 hover:underline mb-1">
+              <NuxtLink to="/blog"><i class="mdi mdi-post"></i> Blog</NuxtLink>
             </li>
-            <li class="bg-black text-white p-2 hover:underline">
-              <NuxtLink to="/anonmes">AnonMess</NuxtLink>
+            <li class="bg-black text-white p-2 hover:underline mb-1">
+              <NuxtLink to="/anonmes"><i class="mdi mdi-incognito-circle"></i> AnonMess</NuxtLink>
             </li>
-            <li class="bg-black text-white p-2 hover:underline">
-              <NuxtLink to="/shn">shnAI</NuxtLink>
+            <li class="bg-black text-white p-2 hover:underline mb-1">
+              <NuxtLink to="/shn"><i class="mdi mdi-zodiac-gemini"></i> shnAI</NuxtLink>
             </li>
           </ul>
         </nav>
@@ -217,6 +218,7 @@ const name = ref('');
 const message = ref('');
 const isSubmitting = ref(false);
 const sidebar = ref(false);
+const menuOpen = ref(false);
 
 const sendMessage = async () => {
   isSubmitting.value = true
