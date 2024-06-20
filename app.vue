@@ -12,7 +12,7 @@
 
         </div>
         <hr />
-        <button class="bg-black p-2 w-full text-white hover:bg-gray-700 mt-2" @click="menuOpen=!menuOpen"><i :class="(menuOpen== true ) ? 'mdi mdi-menu-open' : 'mdi mdi-menu'"></i> Menu</button>
+        <button class="bg-black p-2 w-full text-white hover:bg-gray-700 mt-2 block md:hidden" @click="menuOpen=!menuOpen"><i :class="(menuOpen== true ) ? 'mdi mdi-menu-open' : 'mdi mdi-menu'"></i> Menu</button>
         <nav :class="(menuOpen == true ) ? 'mt-5 block' : 'mt-5 hidden md:block'">
           <ul class="flex flex-col md:flex-row md:justify-center md:space-x-5 ">
             <li class="bg-black text-white p-2 hover:underline mb-1">
