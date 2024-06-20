@@ -10,7 +10,7 @@
             <h3
                 class="text-white text-xl font-bold mt-4 border-l-4  border-black ml-2 bg-gradient-to-r from-gray-500 via-white to-white p-2">
                 @jstalinko</h3>
-            <div class="grid grid-cols-2 mt-4 gap-3 mr-3">
+            <div class="grid grid-cols-2 mt-4 gap-3 p-3">
 
                 <div class="border-2 border-gray-500 gap-2 rounded-lg hover:border-black hover:shadow-lg bg-gradient-to-r from-transparent via-slate-100 to-gray-400 hover:bg-gradient-to-r hover:from-gray-400 hover:via-slate-100 hover:to-white"
                     v-for="repo in repositories" :key="repo.id">
@@ -31,7 +31,7 @@
             <h3
                 class="text-white text-xl font-bold mt-4 border-l-4  border-black ml-2 bg-gradient-to-r from-gray-500 via-white to-white p-2">
                 @justalinko</h3>
-            <div class="grid grid-cols-2 mt-4 gap-3 mr-3">
+            <div class="grid grid-cols-2 mt-4 gap-3 p-3">
 
                 <div class="border-2 border-gray-500 gap-2 rounded-lg hover:border-black hover:shadow-lg bg-gradient-to-r from-transparent via-slate-100 to-gray-400 hover:bg-gradient-to-r hover:from-gray-400 hover:via-slate-100 hover:to-white"
                     v-for="repo in repositories2" :key="repo.id">
